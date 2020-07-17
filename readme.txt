@@ -1,27 +1,16 @@
-﻿哈哈
-Git is a version control system.
-Git is free software.
-第一次修改
+﻿git学习心得：
+1.关于用户名和邮箱：
+	1）git本地可以设置global user.name和user.email ，也可以根据不同项目设置不同的user.name&user.email，一般我们设置一个全局的就行了。
+	
+	2）git向远程仓库push文件时可以使用任意用户名和邮箱。只要这台电脑上的公钥在网站的公钥列表里就可以向远程仓库推送代码。
+	
+	3）如果提交时使用的user.email是跟网站注册时使用的一样的邮箱,则提交人显示的是网站上的用户名（即使本地user.name与远程不一样）。比如:
+		本地账户名为:user.name = 张三 user.email = zhangsan@123.com
+		github用户名为：张三丰  email = zhangsan@123.com
+		这时从客户端提交到远程仓库后贡献者的名字是张三丰而不是张三，因为github通过邮箱判断这个用户就是本仓库的拥有者，所以直接显示了网站上的用户名
 
-更换git本地用户名为tyn_cc后提交一次试试看 ：结果显示提交的用户名并没有变化，跟网站上的用户名保持一致还是Tonytyn
-
-然后我再换一个邮箱tongyannan5@sina.com.cn试试 结果用户名改变了，变成了tyn_cc。
-
-原来github是根据邮箱来判断用户名的，如果使用git推送时如果user.email跟网站上的是一样的，那后台显示的就是网站上的用户名。这时候git本地用户名user.name没什么用。但是如果提交代码的user.email与网站上不一样，则会显示git本地提交时提供的用户名和邮箱
-
-github绑定的ssh公钥是针对于电脑来说的，并不是用户。也就是说只要电脑的公钥在github网站的公钥列表里，这台电脑就能提交代码到相应的仓库
-
-
-刚才又试了试把邮箱改成一个不存在的邮箱
-
-现在在家里笔记本上试试把邮箱改成错误的能不能push  成功了！
-看来是可以push上来的。现在应该能确定了：git向远程仓库push文件时是不用确定提交账号的邮箱是否为网站注册的邮箱的。只要这台电脑上的公钥在网站的公钥列表里就可以向远程仓库推送代码。如果提交时使用的user.email是跟网站注册时使用的一样的邮箱,则提交人显示的是网站上的用户名（即使本地user.name与远程不一样）。如果push时的user.email与远程网站注册时不一致，则提交人显示此时的本地user.name和user.email
-
-从远程更新一次
-
-测试diff
-
-在Dev中添加内容
-
-feature456
+	4）如果push时的user.email与远程网站注册时不一致，则提交人显示此时的本地user.name和user.email，比如：
+		本地账户名还是:user.name = 张三 user.email = zhangsan@123.com
+		gitee用户名为：李四 email = lisi@123.com
+		这时从客户端提交到远程仓库后贡献者的名字就是张三。因为gitee看到这个邮箱（zhangsan@123.com）后判断这不是本仓库的拥有者，是一个其他人，所以就把本地提交的用户名作为贡献者名字
 
